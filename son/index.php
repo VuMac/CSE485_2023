@@ -135,6 +135,17 @@
 
             <div class="col-sm-3">
                 <div class="card mb-2" style="width: 100%;">
+                    <img src="images/songs/nguoithay.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">
+                            <a href="" class="text-decoration-none">Người Thầy</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card mb-2" style="width: 100%;">
                     <img src="images/songs/noitinhyeubatdau.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center my-title">
