@@ -1,3 +1,18 @@
+<?php
+include "./admin/connect.php";
+include "./admin/checkuser.php";
+if (isset($_POST['submit'])) {
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
+    $role =  checkuser($user,$pass);
+    if ($role == 1){
+        header("Location: ./admin/index.php");
+    }
+    else{
+        header("Location: ./index.php");
+    }
+    
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
