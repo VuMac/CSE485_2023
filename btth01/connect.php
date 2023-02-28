@@ -1,6 +1,6 @@
 <?php
 function connect(){
-$host = '127.0.0.1';
+$host = 'localhost';
 $dbname = 'btth01_cse485';
 $username = 'root';
 $password = '';
