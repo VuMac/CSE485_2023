@@ -4,7 +4,7 @@ include "./admin/user.php";
 if (isset($_POST['submit'])) {
     $user = $_POST['username'];
     $pass = $_POST['password'];
-    $role =  user($user,$pass);
+    $role =  checkuser($user,$pass);
     if ($role == 1){
         header("Location: ./admin/index.php");
     }
