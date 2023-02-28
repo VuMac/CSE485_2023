@@ -1,7 +1,8 @@
 <?php
     session_start();
     ob_start();
-    
+    include "./admin/connect.php";
+    include "./admin/user.php";
     if((isset($_POST['dangnhap']))&&($_POST['dangnhap'])){
         $user = $_POST['user'];
         $pass = $_POST['pass'];
