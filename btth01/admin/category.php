@@ -1,3 +1,11 @@
+<?php 
+include "./connect.php";
+$conn= connect();
+$sql = "Select * from theloai";
+$stmt = $conn->query($sql);
+$theloais = $stmt->fetchAll();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

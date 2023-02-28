@@ -1,3 +1,11 @@
+<?php
+include "./connect.php";
+$conn = connect();
+$matloai = $_GET["ma_tloai"];
+$sql = "SELECT ma_tloai, ten_tloai FROM theloai WHERE ma_tloai='$matloai'";
+$stmt = $conn->query($sql);
+$tloai = $stmt->fetch();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
