@@ -1,14 +1,16 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db="btth01_cse485";
-    global $conn;
-    
-    $conn = mysqli_connect($servername,$username,$pass);
-    if( !$conn)
-    {
-        die('chịu' . mysql_error($conn) );
-    }
-mysqli_select_db($conn,$db);
-?>
+function connect(){
+$host = '127.0.0.1';
+$dbname = 'btth01_cse485';
+$username = 'root';
+$password = '';
+
+try {
+  $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//   echo 'Connected to database';
+return $pdo;
+} catch (PDOException $e) {
+  echo 'Connection failed: ' . $e->getMessage();
+}
+}
