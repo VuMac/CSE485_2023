@@ -14,3 +14,4 @@ return $pdo;
   echo 'Connection failed: ' . $e->getMessage();
 }
 }
+?>
