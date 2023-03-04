@@ -1,18 +1,25 @@
 <?php
-include "./admin/connect.php";
-include "./admin/user.php";
-if (isset($_POST['submit'])) {
-    $user = $_POST['username'];
-    $pass = $_POST['password'];
-    $role =  checkuser($user,$pass);
-    if ($role == 1){
-        header("Location: ./admin/index.php");
-    }
-    else{
-        header("Location: ./index.php");
-    }
-    
-}
+    include "./connect.php";
+    $conn = connect();
+    $sql = "SELECT COUNT(*) FROM nguoi_dung";
+    $stmt = $conn->query($sql);
+    $dem = $stmt->fetch();
+
+
+    $sql = "SELECT COUNT(*) FROM tacgia";
+    $stmt_tacgia = $conn->query($sql);
+    $dem_tacgia = $stmt_tacgia->fetch();
+
+    $sql = "SELECT COUNT(*) FROM theloai";
+    $stmt_theloai = $conn->query($sql);
+    $dem_theloai = $stmt_theloai->fetch();
+
+
+    $sql = "SELECT COUNT(*) FROM baiviet";
+    $stmt_baiviet = $conn->query($sql);
+    $dem_baiviet = $stmt_baiviet->fetch();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
