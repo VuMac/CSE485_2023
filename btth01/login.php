@@ -1,16 +1,18 @@
 <?php
-    session_start();
-    ob_start();
-    include "./admin/connect.php";
-    include "./admin/user.php";
-    if((isset($_POST['dangnhap']))&&($_POST['dangnhap'])){
-        $user = $_POST['user'];
-        $pass = $_POST['pass'];
-        $role = checkuser($user,$pass);
-        $_SESSION['role']=$role;
-        if (role==1 ) header('location: edit_category.php ');
-        else header ('location: login.php');
+include "./admin/connect.php";
+include "./admin/checkuser.php";
+if (isset($_POST['submit'])) {
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
+    $role =  checkuser($user,$pass);
+    if ($role == 1){
+        header("Location: ./admin/index.php");
     }
+    else{
+        header("Location: ./index.php");
+    }
+    
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
